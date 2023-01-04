@@ -5,15 +5,12 @@ const clear = document.getElementById("clear");
 const err = document.querySelector(".err");
 
 submit.addEventListener("click", () => {
-  if (input.value !== "") {
-    output.textContent = input.value;
-    input.value = "";
-    input.placeholder = "Введите сообщение";
-    err.classList.remove("errActive");
-  } else {
+  if (input.value === "") {
     input.placeholder = "Заполните это поле";
     err.classList.add("errActive");
   }
+  output.textContent = input.value;
+  input.value = "";
 });
 
 clear.addEventListener("click", () => {
